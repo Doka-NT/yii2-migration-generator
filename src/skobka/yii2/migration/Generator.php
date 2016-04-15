@@ -123,11 +123,11 @@ class Generator
             } elseif ($annotation instanceof Annotation\Column) {
                 $typeArgs = implode(',', $annotation->typeArgs);
                 $columns[] = sprintf(
-                    '"%s" => $this->' . $annotation->type . '(%s)%s . "%s"',
+                    '"%s" => $this->' . $annotation->type . '(%s)%s %s',
                     $annotation->name,
                     $annotation->typeArgs ? $typeArgs : '',
                     $annotation->notNull ? '->notNull()' : '',
-                    $annotation->extra
+                    $annotation->extra ? ' . "' .$annotation->extra . '"' : ''
                 );
             }
         }

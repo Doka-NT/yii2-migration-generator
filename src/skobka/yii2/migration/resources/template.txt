@@ -9,13 +9,13 @@ class __ClassName__ extends Migration
 {
     public function safeUp()
     {
-        $this->createTable(__TableName__:tableName(), [
+        $this->createTable(__TableName__::tableName(), [
             __Columns__
         ]);
     }
 
     public function safeDown()
     {
-        $this->dropTable(__TableName__:tableName());
+        $this->dropTable(__TableName__::tableName());
     }
 }
