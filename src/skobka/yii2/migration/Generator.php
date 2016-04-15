@@ -133,10 +133,12 @@ class Generator
         }
         $fileContents = file_get_contents(__DIR__ . '/resources/template.txt');
         $fileContents = str_replace([
+            '__ClassNameFull__',
             '__ClassName__',
             '__TableName__',
             '__Columns__',
         ], [
+            $reflectionClass->getName(),
             $this->getFileName($reflectionClass),
             $reflectionClass->getShortName(),
             implode(',' . PHP_EOL . '            ', $columns),

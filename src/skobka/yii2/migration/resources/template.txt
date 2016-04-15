@@ -3,17 +3,19 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
+use __ClassNameFull__;
+
 class __ClassName__ extends Migration
 {
     public function safeUp()
     {
-        $this->createTable('__TableName__',[
+        $this->createTable(__TableName__:tableName(), [
             __Columns__
         ]);
     }
 
     public function safeDown()
     {
-        $this->dropTable('__TableName__');
+        $this->dropTable(__TableName__:tableName());
     }
 }
