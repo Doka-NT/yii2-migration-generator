@@ -139,7 +139,7 @@ class Generator
             '__Columns__',
         ], [
             $reflectionClass->getName(),
-            $this->getFileName($reflectionClass),
+            $this->getFileName($reflectionClass->getName()),
             $reflectionClass->getShortName(),
             implode(',' . PHP_EOL . '            ', $columns),
         ], $fileContents);
