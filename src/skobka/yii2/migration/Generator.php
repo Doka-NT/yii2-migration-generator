@@ -92,7 +92,7 @@ class Generator
         $tableAnnotationCount = 0;
         foreach ($annotations as $annotation) {
             if ($annotation instanceof Annotation\Table) {
-                if(!$annotation->name){
+                if(!$annotation->name && !is_null($annotation->name)){
                     throw new Annotation\exceptions\UndefinedTableNameException;
                 }                
                 $tableAnnotationCount++;
@@ -118,8 +118,8 @@ class Generator
         $table = null;
         $columns = [];
         foreach ($annotations as $annotation) {
-            if (($annotation instanceof Annotation\Table) && !$table) {
-                $table = $annotation->name;
+            if (($annotation instanceof Annotation\Table) && is_null($table)) {
+                $table = $annotation->name ? : false;
             } elseif ($annotation instanceof Annotation\Column) {
                 $typeArgs = implode(',', $annotation->typeArgs);
                 $columns[] = sprintf(
@@ -140,7 +140,7 @@ class Generator
         ], [
             $reflectionClass->getName(),
             $this->getFileName($reflectionClass->getName()),
-            $reflectionClass->getShortName(),
+            $table ? "'$table'" : $reflectionClass->getShortName() . '::tableName()' ,
             implode(',' . PHP_EOL . '            ', $columns),
         ], $fileContents);
         return $fileContents;
