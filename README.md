@@ -56,8 +56,14 @@ Available properties:
 - **name** - name of column
 - **type** - column type
 - **typeArgs** - an array of type arguments, for example: @Column(type="decimal", typeArgs={10,2})
-- **extra** - string wich will be appente to then end column defenition.
- 
+- **extra** - string wich will be append to then end of column definition 
+
+
+After all run
+```bash
+php yii migration/generate common/models/mymodel 
+```
+
 ##Examples
 ```php
 /**
@@ -112,7 +118,6 @@ class SubSimpleClass extends SimpleClass
 }
 ```
  
-
 
 
 
