@@ -6,7 +6,7 @@ Generates migrations from Annotations of Model or ActiveRecords classes (not onl
 ##Installation 
 
 ```bash
-php composer.phar require-dev skobka/yii2-migration-generator "*"
+php composer.phar require skobka/yii2-migration-generator "*"
 ```
 Or add it manualy to composer.json
 ```json
