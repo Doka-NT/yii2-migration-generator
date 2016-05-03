@@ -13,6 +13,7 @@ namespace skobka\yii2\Controllers;
 
 use skobka\yii2\migration\Generator;
 use yii\console\Controller;
+use yii\helpers\BaseFileHelper;
 
 class MigrationGeneratorController extends Controller
 {
@@ -23,6 +24,7 @@ class MigrationGeneratorController extends Controller
     public function actionGenerate($class){
         $generator = new Generator;
         $dir = \Yii::getAlias($this->migrationsDir);
+        BaseFileHelper::createDirectory($dir);
         $generator->generate($class, $dir);
         $this->stdout("Migration for $class was successfully generated");
     }
