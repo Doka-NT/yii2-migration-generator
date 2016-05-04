@@ -17,6 +17,7 @@ class Column implements Annotation
 
     /**
      * @var string
+     * @Enum({"primaryKey", "bigPrimaryKey", "string", "text", "smallInteger", "integer", "bigInteger", "float", "double", "decimal", "dateTime", "timestamp", "time", "date", "binary", "boolean", "money"})
      */
     public $type;
 
