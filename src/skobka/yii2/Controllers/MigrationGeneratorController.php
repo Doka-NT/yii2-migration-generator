@@ -13,7 +13,9 @@ namespace skobka\yii2\Controllers;
 
 use skobka\yii2\migration\Generator;
 use yii\console\Controller;
+use yii\db\ActiveRecord;
 use yii\helpers\BaseFileHelper;
+use yii\helpers\Console;
 
 class MigrationGeneratorController extends Controller
 {
@@ -25,7 +27,18 @@ class MigrationGeneratorController extends Controller
         $generator = new Generator;
         $dir = \Yii::getAlias($this->migrationsDir);
         BaseFileHelper::createDirectory($dir);
-        $generator->generate($class, $dir);
-        $this->stdout("Migration for $class was successfully generated");
+
+        if(!is_subclass_of($class, ActiveRecord::class)){
+            Console::error("You must provide an ActiveRecord subclass");
+            return static::EXIT_CODE_ERROR;
+        }
+        /* @var $class ActiveRecord */
+        $tableName = $class::tableName();
+        $tableSchema = \Yii::$app->db->getSchema()->getTableSchema($tableName);
+        
+        $generator->generate($class, $dir, $tableSchema);
+        Console::output("Migration for $class was successfully generated");
+
+        return static::EXIT_CODE_NORMAL;
     }
 }

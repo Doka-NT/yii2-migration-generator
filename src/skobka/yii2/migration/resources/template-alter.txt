@@ -1,0 +1,19 @@
+<?php
+
+use yii\db\Schema;
+use yii\db\Migration;
+
+use __ClassNameFull__;
+
+class __ClassName__ extends Migration
+{
+    public function safeUp()
+    {
+        __safe_up__
+    }
+
+    public function safeDown()
+    {
+        __safe_down__
+    }
+}
