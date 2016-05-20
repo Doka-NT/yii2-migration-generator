@@ -29,7 +29,8 @@ class MigrationGeneratorController extends Controller
         BaseFileHelper::createDirectory($dir);
 
         if(!is_subclass_of($class, ActiveRecord::class)){
-            Console::error("You must provide an ActiveRecord subclass");
+            $message = sprintf("You must provide an ActiveRecord subclass. %s given", $class);
+            Console::error($message);
             return static::EXIT_CODE_ERROR;
         }
         /* @var $class ActiveRecord */
