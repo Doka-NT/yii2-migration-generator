@@ -11,5 +11,8 @@
         "psr-4": {
             "skobka\\": "src/skobka"
         }
+    },
+    "require-dev": {
+        "yiisoft/yii2-coding-standards": "^2.0"
     }
 }

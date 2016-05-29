@@ -1,12 +1,7 @@
 <?php
 /**
- *
  * @author Soshnikov Artem <213036@skobka.com>
- * @version 1.0
  * @copyright (c) 15.04.2016 13:33
- * @website http://skobka.com
- * @license http://skobka.com/license.html
- * @project annotation-test
  */
 
 namespace skobka\yii2\Controllers;
@@ -23,12 +18,13 @@ class MigrationGeneratorController extends Controller
 
     public $migrationsDir = '@app/migrations';
 
-    public function actionGenerate($class){
+    public function actionGenerate($class)
+    {
         $generator = new Generator;
         $dir = \Yii::getAlias($this->migrationsDir);
         BaseFileHelper::createDirectory($dir);
 
-        if(!is_subclass_of($class, ActiveRecord::class)){
+        if (!is_subclass_of($class, ActiveRecord::class)) {
             $message = sprintf("You must provide an ActiveRecord subclass. %s given", $class);
             Console::error($message);
             return static::EXIT_CODE_ERROR;
@@ -36,7 +32,7 @@ class MigrationGeneratorController extends Controller
         /* @var $class ActiveRecord */
         $tableName = $class::tableName();
         $tableSchema = \Yii::$app->db->getSchema()->getTableSchema($tableName);
-        
+
         $generator->generate($class, $dir, $tableSchema);
         Console::output("Migration for $class was successfully generated");
 

@@ -1,7 +1,10 @@
 <?php
+/**
+ * @author Soshnikov Artem <213036@skobka.com>
+ * @copyright (c) 29.05.2016
+ */
 
 namespace skobka\yii2\migration;
-
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
@@ -80,7 +83,10 @@ class Generator
             /* @var $superclassAnnotation Annotation\Superclass */
             $superclassAnnotation = $this->reader->getClassAnnotation($parent, Annotation\Superclass::class);
             if ($superclassAnnotation) {
-                $annotations = array_merge_recursive($annotations, $this->getNestedAnnotations($parent, $superclassAnnotation->active));
+                $annotations = array_merge_recursive(
+                    $annotations,
+                    $this->getNestedAnnotations($parent, $superclassAnnotation->active)
+                );
             }
         }
         return $annotations;
@@ -101,9 +107,11 @@ class Generator
                     throw new Annotation\exceptions\UndefinedTableNameException;
                 }
                 $tableAnnotationCount++;
-            } else if ($annotation instanceof Annotation\Column) {
-                if (!$annotation->name) {
-                    throw new Annotation\exceptions\UndefinedColumnNameException;
+            } else {
+                if ($annotation instanceof Annotation\Column) {
+                    if (!$annotation->name) {
+                        throw new Annotation\exceptions\UndefinedColumnNameException;
+                    }
                 }
             }
         }
@@ -159,8 +167,11 @@ class Generator
         return $fileContents;
     }
 
-    protected function generateAlterTableFileContents(\ReflectionClass $reflectionClass, $annotations, TableSchema $tableSchema)
-    {
+    protected function generateAlterTableFileContents(
+        \ReflectionClass $reflectionClass,
+        $annotations,
+        TableSchema $tableSchema
+    ) {
         $removeColumns = [];
         $removeColumnsRevert = [];
         $addColumns = [];
@@ -217,7 +228,12 @@ class Generator
      */
     protected function generateNewColumnString(Annotation\Column $annotation)
     {
-        return $this->generateColumnDefinition($annotation->type, $annotation->typeArgs, $annotation->notNull, $annotation->extra);
+        return $this->generateColumnDefinition(
+            $annotation->type,
+            $annotation->typeArgs,
+            $annotation->notNull,
+            $annotation->extra
+        );
     }
 
     /***
@@ -317,8 +333,10 @@ class Generator
      * @param Annotation\Column $annotation
      * @return string
      */
-    protected function generateAddColumnStringFromAnnotation(\ReflectionClass $reflectionClass, Annotation\Column $annotation)
-    {
+    protected function generateAddColumnStringFromAnnotation(
+        \ReflectionClass $reflectionClass,
+        Annotation\Column $annotation
+    ) {
         return $this->getAddColumnString(
             $this->getTableName($reflectionClass),
             $annotation->name,
