@@ -46,6 +46,7 @@ If you want to skip current @Superclass from parsing, simple set option *active*
 This annotations tells that current class define a table. Table name takes from property name:
 ```
 @Table(name="my_first_table")
+// You can use @Table() without parameters, then MyModel::tableName() will be used
 ```
 
 ###@Column
