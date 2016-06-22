@@ -19,7 +19,7 @@ Or add it manualy to composer.json
 
 Next step is to enable generation from Yii2 console. Add following code in console/config/main.php
 ```php
-use skobka\yii2\Controllers\MigrationGeneratorController;
+use skobka\yii2\migrationGenerator\Controllers\MigrationGeneratorController;
 
 return [
    //...
