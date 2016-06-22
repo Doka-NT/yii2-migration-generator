@@ -83,9 +83,9 @@ class BaseModel
 
 ```php
 <?php
-use skobka\yii2\annotation\Column;
-use skobka\yii2\annotation\Superclass;
-use skobka\yii2\annotation\Table;
+use skobka\yii2\migrationGenerator\annotation\Column;
+use skobka\yii2\migrationGenerator\annotation\Superclass;
+use skobka\yii2\migrationGenerator\annotation\Table;
 
 /**
  * @Table(name="{{%simple_class}}")
@@ -104,8 +104,8 @@ class SimpleClass extends BaseModel
 
 ```php
 <?php
-use skobka\yii2\annotation\Column;
-use skobka\yii2\annotation\Table;
+use skobka\yii2\migrationGenerator\annotation\Column;
+use skobka\yii2\migrationGenerator\annotation\Table;
 
 /**
  * @Table(name="sub_simple_class")
