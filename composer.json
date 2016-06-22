@@ -17,7 +17,7 @@
 
     "autoload": {
         "psr-4": {
-            "skobka\\yii2\\migrationGenerator": "src"
+            "skobka\\yii2\\migrationGenerator\\": "src"
         }
     },
     "require-dev": {
