@@ -4,11 +4,11 @@
  * @copyright (c) 29.05.2016
  */
 
-namespace skobka\yii2\migration;
+namespace skobka\yii2\migrationGenerator\migration;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
-use skobka\yii2\annotation as Annotation;
+use skobka\yii2\migrationGenerator\annotation as Annotation;
 use yii\db\ColumnSchema;
 use yii\db\TableSchema;
 

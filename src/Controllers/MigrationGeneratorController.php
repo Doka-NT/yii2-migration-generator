@@ -4,9 +4,9 @@
  * @copyright (c) 15.04.2016 13:33
  */
 
-namespace skobka\yii2\Controllers;
+namespace skobka\yii2\migrationGenerator\Controllers;
 
-use skobka\yii2\migration\Generator;
+use skobka\yii2\migrationGenerator\migration\Generator;
 use yii\console\Controller;
 use yii\db\ActiveRecord;
 use yii\helpers\BaseFileHelper;

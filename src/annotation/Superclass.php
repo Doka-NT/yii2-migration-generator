@@ -4,7 +4,7 @@
  * @copyright (c) 29.05.2016
  */
 
-namespace skobka\yii2\annotation;
+namespace skobka\yii2\migrationGenerator\annotation;
 
 use Doctrine\Common\Annotations\Annotation\Target;
 
@@ -12,11 +12,10 @@ use Doctrine\Common\Annotations\Annotation\Target;
  * @Annotation
  * @Target("CLASS")
  */
-class Table implements Annotation
+class Superclass implements Annotation
 {
     /**
-     * skobka\yii2\annotation\Table name like {{%my_table}}
-     * @var string
+     * @var bool
      */
-    public $name;
+    public $active = true;
 }

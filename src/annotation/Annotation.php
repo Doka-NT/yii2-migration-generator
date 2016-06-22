@@ -4,7 +4,7 @@
  * @copyright (c) 15.04.2016 10:27
  */
 
-namespace skobka\yii2\annotation;
+namespace skobka\yii2\migrationGenerator\annotation;
 
 interface Annotation
 {

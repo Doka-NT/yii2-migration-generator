@@ -2,6 +2,14 @@
     "name" : "skobka/yii2-migration-generator",
     "description": "Generates migrations from Annotations",
     "license": "MIT",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "authors": [
+        {
+            "name": "Soshnikov Artem",
+            "email": "213036@skobka.com"
+        }
+    ],
     "require": {
         "yiisoft/yii2": "~2.0",
         "doctrine/annotations": "v1.2.7"
@@ -9,7 +17,7 @@
 
     "autoload": {
         "psr-4": {
-            "skobka\\": "src/skobka"
+            "skobka\\yii2\\migrationGenerator": "src"
         }
     },
     "require-dev": {

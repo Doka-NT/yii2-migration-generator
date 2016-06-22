@@ -5,7 +5,7 @@
  * @copyright (c) 15.04.2016 13:02
  */
 
-namespace skobka\yii2\annotation\exceptions;
+namespace skobka\yii2\migrationGenerator\annotation\exceptions;
 
 class UndefinedTableNameException extends \Exception
 {
