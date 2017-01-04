@@ -149,7 +149,7 @@ class Generator
             if (($annotation instanceof Annotation\Table) && is_null($table)) {
                 $table = $annotation->name ?: false;
             } elseif ($annotation instanceof Annotation\Column) {
-                $columns[] = '"' . $annotation->name . '" => ' . $this->generateNewColumnString($annotation);
+                $columns[] = '\'' . $annotation->name . '\' => ' . $this->generateNewColumnString($annotation);
             }
         }
         $fileContents = file_get_contents(__DIR__ . '/resources/template.txt');
@@ -293,10 +293,10 @@ class Generator
     {
         $typeArgs = implode(',', $typeArgs);
         return sprintf(
-            '$this->' . $type . '(%s)%s %s',
+            '$this->' . $type . '(%s)%s%s',
             $typeArgs,
             $notNull ? '->notNull()' : '',
-            $extra ? ' . "' . $extra . '"' : ''
+            $extra ? ' . \' ' . $extra . '\'' : ''
         );
     }
 

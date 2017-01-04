@@ -7,11 +7,17 @@ use __ClassNameFull__;
 
 class __ClassName__ extends Migration
 {
+    /**
+     * @inheritdoc
+     */
     public function safeUp()
     {
         __safe_up__
     }
 
+    /**
+     * @inheritdoc
+     */
     public function safeDown()
     {
         __safe_down__
