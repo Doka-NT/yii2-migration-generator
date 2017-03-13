@@ -19,7 +19,7 @@ class Generator
      */
     protected $reader;
 
-    protected $ignoreAnnotations = ['website', 'project'];
+    protected $ignoreAnnotations = ['website', 'project', 'mixin'];
 
     protected $tabSpace = '            ';
 
