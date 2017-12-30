@@ -6,7 +6,7 @@ php:
 
 before_script:
     - travis_retry composer self-update
-    - travis_retry composer require --global fxp/composer-asset-plugin
+    - travis_retry composer global require "fxp/composer-asset-plugin:~1.3"
     - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
