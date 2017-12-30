@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "yiisoft/yii2": "~2.0",
         "doctrine/annotations": "v1.2.7",
         "crazycodr/standard-exceptions": "^2.1"
