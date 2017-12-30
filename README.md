@@ -3,7 +3,7 @@ Generates migrations from Annotations of Model or ActiveRecords classes (not onl
 
 **NOTE!** Works only with yii2 console. This is **NOT Gii extension**
 
-##Installation 
+## Installation 
 
 ```bash
 php composer.phar require --dev skobka/yii2-migration-generator "*"
