@@ -1,4 +1,8 @@
 # yii2-migration-generator
+
+[![Build Status](https://travis-ci.org/Doka-NT/yii2-migration-generator.svg?branch=master)](https://travis-ci.org/Doka-NT/yii2-migration-generator)
+[![codecov](https://codecov.io/gh/Doka-NT/yii2-migration-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/Doka-NT/yii2-migration-generator)
+
 Generates migrations from Annotations of Model or ActiveRecords classes (not only). You simple write classes as usual and then asking generator to create migration file from code.
 
 **NOTE!** Works only with yii2 console. This is **NOT Gii extension**
