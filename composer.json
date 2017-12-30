@@ -11,8 +11,10 @@
         }
     ],
     "require": {
+        "php": "^7.0",
         "yiisoft/yii2": "~2.0",
-        "doctrine/annotations": "v1.2.7"
+        "doctrine/annotations": "v1.2.7",
+        "crazycodr/standard-exceptions": "^2.1"
     },
 
     "autoload": {
@@ -21,6 +23,7 @@
         }
     },
     "require-dev": {
-        "yiisoft/yii2-coding-standards": "^2.0"
+        "yiisoft/yii2-coding-standards": "^2.0",
+        "phpunit/phpunit": "^6.5"
     }
 }
