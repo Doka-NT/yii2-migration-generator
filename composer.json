@@ -24,6 +24,7 @@
     },
     "require-dev": {
         "yiisoft/yii2-coding-standards": "^2.0",
-        "phpunit/phpunit": "^6.5"
+        "phpunit/phpunit": "^6.5",
+        "codacy/coverage": "^1.4"
     }
 }
