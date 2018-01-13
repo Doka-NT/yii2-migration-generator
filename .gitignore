@@ -5,3 +5,5 @@ composer.lock
 /build/
 /.idea/
 /.nbproject/
+phpunit.phar
+clover.xml

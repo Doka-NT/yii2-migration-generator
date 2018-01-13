@@ -15,7 +15,7 @@ use Doctrine\Common\Annotations\Annotation\Target;
 class Table implements Annotation
 {
     /**
-     * skobka\yii2\annotation\Table name like {{%my_table}}
+     * Table name like {{%my_table}}
      * @var string
      */
     public $name;

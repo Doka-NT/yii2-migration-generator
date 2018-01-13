@@ -1,9 +1,13 @@
 # yii2-migration-generator
+
+[![Build Status](https://travis-ci.org/Doka-NT/yii2-migration-generator.svg?branch=master)](https://travis-ci.org/Doka-NT/yii2-migration-generator)
+[![codecov](https://codecov.io/gh/Doka-NT/yii2-migration-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/Doka-NT/yii2-migration-generator)
+
 Generates migrations from Annotations of Model or ActiveRecords classes (not only). You simple write classes as usual and then asking generator to create migration file from code.
 
 **NOTE!** Works only with yii2 console. This is **NOT Gii extension**
 
-##Installation 
+## Installation 
 
 ```bash
 php composer.phar require --dev skobka/yii2-migration-generator "*"
@@ -32,24 +36,24 @@ return [
 ]
 ```
 
-##Usage
+## Usage
 This package provide following annotations:
 - @Superclass(active=true)
 - @Table(name="")
 - @Column(name="", type="", typeArgs={}, extra="")
 
-###@Superclass
+### @Superclass
 Indicate that annotation from current class must be included in child class. When parser goes throught classes it will skip class without @Superclass or @Table annotation. Parser will not finds parents of such class. 
 If you want to skip current @Superclass from parsing, simple set option *active* to *false*
 
-###@Table
+### @Table
 This annotations tells that current class define a table. Table name takes from property name:
 ```
 @Table(name="my_first_table")
 // You can use @Table() without parameters, then MyModel::tableName() will be used
 ```
 
-###@Column
+### @Column
 This annotation defined a table column. You must specify the name and type of column. 
 
 **NOTE!** Column types must be a method names of yii\db\SchemaBuilderTrait
@@ -65,7 +69,7 @@ After all run
 php yii migration/generate common/models/mymodel 
 ```
 
-##Examples
+## Examples
 ```php
 /**
  * @Superclass()
